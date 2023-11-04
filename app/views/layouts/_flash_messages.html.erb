@@ -1,0 +1,33 @@
+<%= turbo_frame_tag 'flash_messages' do %>
+  <% flash.each do |flash_type, message| %>
+    <% flash_icon = 'exclamation-triangle' %>
+    <% flash_type = 'danger' if %w[error alert].include? flash_type %>
+    <% if flash_type == 'notice' %>
+      <% flash_type = 'info' %>
+      <% flash_icon = 'info-circle' %>
+    <% elsif flash_type == 'success' %>
+      <% flash_icon = 'check-circle' %>
+    <% end %>
+    <div
+      class="alert alert-<%= flash_type %>"
+      role="alert"
+    >
+      <i class="bi bi-<%= flash_icon %>"></i>
+      <%= message %>
+      <button type="button" class="btn btn-sm mx-0 position-absolute end-0 top-0" data-bs-dismiss="alert" aria-label="Close">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  <% end %>
+  <!--  <div-->
+  <!--    class="alert alert-danger"-->
+  <!--    role="alert"-->
+  <!--    data-controller="alerts"-->
+  <!--    data-action="animationend->removals#remove"-->
+  <!--  >-->
+  <!--    test-->
+  <!--    <button type="button" class="btn btn-sm mx-0 position-absolute end-0 top-0" data-bs-dismiss="alert" aria-label="Close">-->
+  <!--      <i class="bi bi-x"></i>-->
+  <!--    </button>-->
+  <!--  </div>-->
+<% end %>

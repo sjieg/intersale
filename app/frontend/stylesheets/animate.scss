@@ -1,0 +1,20 @@
+@keyframes appear-then-fade {
+  0%, 100% {
+    opacity:0
+  }
+  10%, 90% {
+    opacity:1
+  }
+}
+
+.blink{
+  animation: flash_background 1s;
+}
+@keyframes flash_background{
+  0%, 30%, 50% {
+    background-color: initial;
+  }
+  20%, 35% {
+    background-color: white;
+  }
+}

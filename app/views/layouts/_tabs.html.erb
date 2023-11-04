@@ -1,0 +1,5 @@
+<% if content_for?(:tabs) %>
+  <ul class="nav nav-tabs <%= yield :tabs_class %>">
+    <%= yield :tabs %>
+  </ul>
+<% end %>

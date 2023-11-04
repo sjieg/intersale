@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="h-100" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <title>erfenisverdelen.nl</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= vite_client_tag %>
+  <%= vite_stylesheet_tag 'bootstrap.scss' %>
+  <%= vite_javascript_tag 'bootstrap' %>
+  <%= vite_javascript_tag 'application' %>
+  <%= vite_stylesheet_tag 'application.scss' %>
+  <!--
+    If using a TypeScript entrypoint file:
+      vite_typescript_tag 'application'
+
+    If using a .jsx or .tsx entrypoint, add the extension:
+      vite_javascript_tag 'application.jsx'
+
+    Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
+  -->
+
+</head>
+
+<body class="d-flex flex-column h-100">
+<%= render partial: 'layouts/flash_messages' %>
+<%= render partial: 'layouts/header' %>
+<%#= render partial: 'layouts/breadcrumb' %>
+<div class="container">
+  <%= render partial: 'layouts/tabs' %>
+  <%= yield %>
+</div>
+<%= render partial: 'layouts/footer' %>
+</body>
+</html>

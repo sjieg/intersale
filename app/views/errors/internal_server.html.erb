@@ -1,0 +1,11 @@
+<%= render CardComponent.new do %>
+  <%= vite_image_tag 'images/error_pages/500.jpg', class: 'card-img-top', alt: 'Broken rings' %>
+  <div class="card-body">
+    <h5 class="card-title text-center">
+      5<i class="far fa-ring-diamond"></i><i class="fas fa-ring-diamond"></i> <%= t('error_pages.500.title') %>
+    </h5>
+    <p class="card-text">
+      <%= t('error_pages.500.description') %>
+    </p>
+  </div>
+<% end %>

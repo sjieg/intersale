@@ -1,0 +1,5 @@
+// Bootstrap is loaded separately from the rest if the components to reduce compiling time after every change
+@import "../stylesheets/bootstrap_components/variables";
+@import "~bootstrap/scss/bootstrap.scss";
+// @import "@remotedevforce/tom-select/dist/scss/tom-select.bootstrap5.scss";
+@import "bootstrap-icons/font/bootstrap-icons.min.css";

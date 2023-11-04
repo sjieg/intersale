@@ -1,0 +1,20 @@
+en:
+  app_name: 'erfenisverdelen.nl'
+  collections:
+  header:
+    sign_out: Sign out
+    sign_up: Sign up
+    log_in: Log in
+    profile: Profile
+    collections: Collecties
+  footer:
+    copyright: Copyright webscrabbler.nl ©
+    theme:
+      dark: Dark
+      light: Light
+      auto: Auto
+  activerecord:
+    models:
+      collections:
+        one: Collectie
+        other: Collecties

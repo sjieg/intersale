@@ -1,0 +1,47 @@
+<div class="pt-3"></div>
+<footer class="footer mt-auto py-3 bg-body-tertiary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <span class="text-body-secondary">
+          <%= t('footer.copyright') %>
+        </span>
+      </div>
+      <div class="col-md-6 col-12 d-flex">
+        <div class="flex-grow-1"></div>
+        <div data-controller="theme" class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+          <button data-action="theme#toggleTheme"
+                  data-theme-target="lightSwitch"
+                  type="button"
+                  class="btn btn-outline-primary"
+                  data-bs-theme-value="light"
+                  data-controller="tooltip"
+                  data-bs-title="<%= t('footer.theme.light') %>"
+          >
+            <i class="bi bi-sun-fill"></i>
+          </button>
+          <button data-action="theme#toggleTheme"
+                  data-theme-target="autoSwitch"
+                  type="button"
+                  class="btn btn-outline-primary"
+                  data-bs-theme-value="auto"
+                  data-controller="tooltip"
+                  data-bs-title="<%= t('footer.theme.auto') %>"
+          >
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button data-action="theme#toggleTheme"
+                  data-theme-target="darkSwitch"
+                  type="button"
+                  class="btn btn-outline-primary"
+                  data-bs-theme-value="dark"
+                  data-controller="tooltip"
+                  data-bs-title="<%= t('footer.theme.dark') %>"
+          >
+            <i class="bi bi-circle-half"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

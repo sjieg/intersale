@@ -1,0 +1,24 @@
+# TODO: Create CI-CD pipeline
+#name: CI/CD
+#on:
+#  push:
+#    branches:
+#      - '**'
+#    tags-ignore:
+#      - '*.*'
+
+#jobs:
+#  build:
+
+# Uses the build image to run tests in paralell
+# - Linter tests
+# - Audit tests
+# - Unit tests
+# - Integration tests
+# test:
+
+# Deploy will be an automatic job that runs on every push the branch corresponding environment
+# deploy:
+
+# Release will be a manual job that you can trigger from the Actions UI
+# release:
