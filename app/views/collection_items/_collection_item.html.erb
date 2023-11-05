@@ -1,0 +1,44 @@
+<div id="<%= dom_id collection_item %>">
+  <p>
+    <strong>Title:</strong>
+    <%= collection_item.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= collection_item.description %>
+  </p>
+
+  <p>
+    <strong>Value:</strong>
+    <%= collection_item.value %>
+  </p>
+
+  <p>
+    <strong>Height mm:</strong>
+    <%= collection_item.height_mm %>
+  </p>
+
+  <p>
+    <strong>Width mm:</strong>
+    <%= collection_item.width_mm %>
+  </p>
+
+  <p>
+    <strong>Depth mm:</strong>
+    <%= collection_item.depth_mm %>
+  </p>
+
+  <p>
+    <strong>Availability:</strong>
+    <%= collection_item.availability %>
+  </p>
+
+  <p>
+    <strong>Images:</strong>
+    <% collection_item.images.each do |image| %>
+      <div><%= link_to image.filename, image %></div>
+    <% end %>
+  </p>
+
+</div>

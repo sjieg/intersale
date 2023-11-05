@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module HeritageSharing
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 7.1
     config.i18n.available_locales = [:en, :nl]
     config.i18n.default_locale = :nl
 

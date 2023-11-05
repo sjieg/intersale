@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index
   after_action :verify_policy_scoped, only: :index
 
-  rescue_from Pundit::NotAuthorizedError, with: :show_401 # unless Rails.env.development?
-  rescue_from ActiveRecord::RecordNotFound, with: :show_401 # unless Rails.env.development?
+  rescue_from Pundit::NotAuthorizedError, with: :show_401 unless Rails.env.development?
+  rescue_from ActiveRecord::RecordNotFound, with: :show_401 unless Rails.env.development?
 
   def set_current_attributes
     Current.user = current_user

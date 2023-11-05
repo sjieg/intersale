@@ -12,7 +12,8 @@ class CollectionsController < ApplicationController
 
   # GET /collections/new
   def new
-    @collection = Collection.new
+    @collection = Collection.new(user: current_user)
+    authorize @collection
   end
 
   # GET /collections/1/edit
@@ -21,7 +22,8 @@ class CollectionsController < ApplicationController
 
   # POST /collections
   def create
-    @collection = Collection.new(collection_params)
+    @collection = Collection.new(collection_params.merge(user: current_user))
+    authorize @collection
 
     if @collection.save
       redirect_to @collection, notice: "Collection was successfully created."
@@ -50,6 +52,7 @@ class CollectionsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_collection
     @collection = Collection.find(params[:id])
+    authorize @collection
   end
 
   # Only allow a list of trusted parameters through.

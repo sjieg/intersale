@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :collections
   devise_for :users, controllers: {
     confirmations: "users/confirmations",
     passwords: "users/passwords",
@@ -11,13 +10,11 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :users
-
-  resource :pages, only: [:home] do
-    collection do
-      get :home
-      get :components
-    end
+  resources :collection_items
+  resources :collections do
+    resources :collection_items, path: :items
   end
+
   # Defines the root path route ("/")
   root to: "collections#index"
 end

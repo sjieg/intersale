@@ -1,20 +1,82 @@
 nl:
-  app_name: 'erfenisverdelen.nl'
+  app_name: 'spullenverdelen.nl'
   collections:
   header:
-    sign_out: Sign out
-    sign_up: Sign up
-    log_in: Log in
-    profile: Profile
+    sign_out: Uitloggen
+    sign_up: Registreren
+    log_in: Inloggen
+    profile: Profiel
     collections: Collecties
   footer:
-    copyright: Copyright webscrabbler.nl ©
+    copyright: Auteursrecht webscrabbler.nl ©
     theme:
-      dark: Dark
-      light: Light
-      auto: Auto
+      dark: Donker
+      light: Licht
+      auto: Automatisch
   activerecord:
     models:
       collections:
         one: Collectie
         other: Collecties
+  devise:
+    confirmations:
+      confirmed: "Uw e-mailadres is succesvol bevestigd."
+      send_instructions: "U ontvangt binnen enkele minuten een e-mail met instructies om uw e-mailadres te bevestigen."
+      send_paranoid_instructions: "Als uw e-mailadres in onze database bestaat, ontvangt u binnen enkele minuten een e-mail met instructies om uw e-mailadres te bevestigen."
+    failure:
+      already_authenticated: "U bent al ingelogd."
+      inactive: "Uw account is nog niet geactiveerd."
+      invalid: "Ongeldige %{authentication_keys} of wachtwoord."
+      locked: "Uw account is vergrendeld."
+      last_attempt: "U heeft nog één poging voordat uw account wordt vergrendeld."
+      not_found_in_database: "Ongeldige %{authentication_keys} of wachtwoord."
+      timeout: "Uw sessie is verlopen. Log alstublieft opnieuw in om door te gaan."
+      unauthenticated: "U moet inloggen of registreren om door te gaan."
+      unconfirmed: "U moet uw e-mailadres bevestigen voordat u verder kunt gaan."
+    mailer:
+      confirmation_instructions:
+        subject: "Instructies voor bevestiging"
+      reset_password_instructions:
+        subject: "Instructies voor het resetten van wachtwoord"
+      unlock_instructions:
+        subject: "Instructies voor ontgrendeling"
+      email_changed:
+        subject: "E-mail gewijzigd"
+      password_change:
+        subject: "Wachtwoord gewijzigd"
+    omniauth_callbacks:
+      failure: "Kon u niet authenticeren van %{kind} omdat \"%{reason}\"."
+      success: "Succesvol geauthenticeerd van %{kind} account."
+    passwords:
+      no_token: "U kunt deze pagina niet bezoeken zonder via een e-mail voor wachtwoordreset te komen. Als u via een dergelijke e-mail komt, zorg er dan voor dat u de volledige URL gebruikt."
+      send_instructions: "U ontvangt binnen enkele minuten een e-mail met instructies om uw wachtwoord te resetten."
+      send_paranoid_instructions: "Als uw e-mailadres in onze database bestaat, ontvangt u binnen enkele minuten een link voor wachtwoordherstel op uw e-mailadres."
+      updated: "Uw wachtwoord is succesvol gewijzigd. U bent nu ingelogd."
+      updated_not_active: "Uw wachtwoord is succesvol gewijzigd."
+    registrations:
+      destroyed: "Tot ziens! Uw account is succesvol geannuleerd. We hopen u snel weer te zien."
+      signed_up: "Welkom! U heeft zich succesvol geregistreerd."
+      signed_up_but_inactive: "U heeft zich succesvol geregistreerd. Echter, we kunnen u niet inloggen omdat uw account nog niet geactiveerd is."
+      signed_up_but_locked: "U heeft zich succesvol geregistreerd. Echter, we kunnen u niet inloggen omdat uw account vergrendeld is."
+      signed_up_but_unconfirmed: "Een bericht met een bevestigingslink is naar uw e-mailadres gestuurd. Volg de link om uw account te activeren."
+      update_needs_confirmation: "U heeft uw account succesvol bijgewerkt, maar we moeten uw nieuwe e-mailadres verifiëren. Controleer uw e-mail en volg de bevestigingslink om uw nieuwe e-mailadres te bevestigen."
+      updated: "Uw account is succesvol bijgewerkt."
+      updated_but_not_signed_in: "Uw account is succesvol bijgewerkt, maar omdat uw wachtwoord is veranderd, moet u opnieuw inloggen."
+    sessions:
+      signed_in: "Succesvol ingelogd."
+      signed_out: "Succesvol uitgelogd."
+      already_signed_out: "Succesvol uitgelogd."
+    unlocks:
+      send_instructions: "U ontvangt binnen enkele minuten een e-mail met instructies om uw account te ontgrendelen."
+      send_paranoid_instructions: "Als uw account bestaat, ontvangt u binnen enkele minuten een e-mail met instructies om het te ontgrendelen."
+      unlocked: "Uw account is succesvol ontgrendeld. Log in om door te gaan."
+  errors:
+    messages:
+      already_confirmed: "was al bevestigd, probeer in te loggen"
+      confirmation_period_expired: "moet binnen %{period} bevestigd worden, vraag een nieuwe aan"
+      expired: "is verlopen, vraag een nieuwe aan"
+      not_found: "niet gevonden"
+      not_locked: "was niet vergrendeld"
+      not_saved:
+        one: "1 fout heeft voorkomen dat deze %{resource} kon worden opgeslagen:"
+        other: "%{count} fouten hebben voorkomen dat deze %{resource} kon worden opgeslagen:"

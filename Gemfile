@@ -4,8 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.7", ">= 7.0.7.2"
-gem 'rails-i18n'
+gem "rails", "~> 7.1.0", ">= 7.1"
+gem "rails-i18n"
 
 # Set up turbo rails
 gem "turbo-rails"
@@ -26,6 +26,7 @@ gem "omniauth-rails_csrf_protection"
 
 # Authorization
 gem "pundit"
+gem "paper_trail"
 
 # View components
 gem "view_component"
@@ -49,7 +50,7 @@ gem "bootsnap", require: false
 gem "simple_form"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing"
 
 group :development, :test do
   gem "irb", "1.6.2" # Bug https://youtrack.jetbrains.com/issue/RUBY-31157 - Fixed in RubyMine 2023.3.3

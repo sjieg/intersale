@@ -46,6 +46,8 @@ development:
 test:
   <<: *default
   database: heritage_sharing_test
+  username: heritage_sharing_user
+  password: heritage_sharing_password
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

@@ -5,29 +5,29 @@ class CollectionPolicy < ApplicationPolicy
   #   false
   # end
   #
-  # def show?
-  #   false
-  # end
-  #
-  # def create?
-  #   false
-  # end
-  #
-  # def new?
-  #   create?
-  # end
-  #
-  # def update?
-  #   false
-  # end
-  #
-  # def edit?
-  #   update?
-  # end
-  #
-  # def destroy?
-  #   false
-  # end
+  def show?
+    @record.minimum_role?(@user, :acquaintance) || @user.admin?
+  end
+
+  def create?
+    @record.minimum_role?(@user, :owner) || @user.admin?
+  end
+
+  def new?
+    create?
+  end
+
+  def update?
+    create?
+  end
+
+  def edit?
+    update?
+  end
+
+  def destroy?
+    update?
+  end
 
   class Scope < Scope
     def resolve

@@ -2,13 +2,13 @@
   <div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 ">
     <div class="col-md-3 mb-2 mb-md-0">
       <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-        <i class="icon-white bi bi-bootstrap-fill" style="font-size: 2rem;"></i>
+        <%= t('app_name') %>
       </a>
     </div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
       <li class="nav-item">
-        <%= link_to t('activerecord.models.collections.other'), collections_path, class: "nav-link #{'link-secondary' if current_page?(home_pages_path)}" %>
+        <%= link_to t('activerecord.models.collections.other'), collections_path, class: "nav-link #{'link-secondary' if current_page?(collections_path)}" %>
       </li>
     </ul>
 
