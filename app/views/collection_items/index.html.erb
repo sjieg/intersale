@@ -2,13 +2,15 @@
 
 <h1>Collection items</h1>
 
-<div id="collection_items">
+<div id="collection_items" class="row">
   <% @collection_items.each do |collection_item| %>
-    <%= render collection_item %>
-    <p>
-      <%= link_to "Show this collection item", collection_item %>
-    </p>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-sm-0">
+      <%= render collection_item %>
+    </div>
   <% end %>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-sm-0">
+    <%= render 'new_collection_item' %>
+  </div>
 </div>
 
 <%= link_to "New collection item", new_collection_collection_item_path(@collection) %>

@@ -6,7 +6,7 @@ en:
     sign_up: Sign up
     log_in: Log in
     profile: Profile
-    collections: Collecties
+    collections: All Collections
   footer:
     copyright: Copyright webscrabbler.nl ©
     theme:
@@ -18,6 +18,13 @@ en:
       collections:
         one: Collectie
         other: Collecties
+  collection_items:
+    new_collection_item:
+      title: New Item
+    form:
+      images:
+        drop_title: Drop your images here or click to upload
+        drop_description: A maximum of 10 images with a size up to 20MB each can be uploaded
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

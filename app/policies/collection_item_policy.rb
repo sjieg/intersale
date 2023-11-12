@@ -35,11 +35,13 @@ class CollectionItemPolicy < ApplicationPolicy
       #   return scope.all
       # end
       scope
-        .includes(:collection, collection: :user_collections)
+        # Onwers or managers of the collection items
+        .joins(:collection, collection: :user_collections)
         .where(collection: {user_collections: {user: @user, role: [:owner, :manager]}})
-        .merge(
+        .or(
+          # Relatives or acquaintances of the collection items if the items is available
           scope
-            .includes(:collection, collection: :user_collections)
+            .joins(:collection, collection: :user_collections)
             .where(collection: {user_collections: {user: @user, role: [:relative, :acquaintance]}})
             .where(availability: :available)
         ).distinct

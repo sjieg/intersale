@@ -18,7 +18,7 @@ services:
   default: &default
     build:
       context: .
-#      target: dev
+      target: dev
     image: heritage_sharing:dev
     container_name: rails-template-dev
     volumes:
@@ -40,19 +40,19 @@ services:
     ports:
       - "3000:3000"
 
-
-# TODO: Add vite as a service once we have a docker image for it
-#  vite:
-#    build: .
-#    command: bin/vite dev --clobber
-#    environment:
-#      DEBUG: '*vite*'
-#      RAILS_ENV: development
-#      VITE_RUBY_HOST: 0.0.0.0
-#    ports:
-#      - "3036:3036"
-#    volumes:
-#      - .:/app
+  vite:
+    build: .
+    command: bin/vite dev --clobber
+    environment:
+      DEBUG: '*vite*'
+      RAILS_ENV: development
+      VITE_RUBY_HOST: 0.0.0.0
+    ports:
+      - "3036:3036"
+    volumes:
+      - .:/rails
+    tty: true
+    stdin_open: true
 
 volumes:
   postgres:

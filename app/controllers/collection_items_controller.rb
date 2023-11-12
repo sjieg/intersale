@@ -58,11 +58,11 @@ class CollectionItemsController < ApplicationController
   end
 
   def set_collection
-    @collection = Collection.find(params[:collection_id])
+    @collection = Collection.find_by(id: params[:collection_id]) || policy_scope(Collection)
   end
 
   # Only allow a list of trusted parameters through.
   def collection_item_params
-    params.require(:collection_item).permit(:collection_id, :title, :description, :value, :height_mm, :width_mm, :depth_mm, :availability)
+    params.require(:collection_item).permit(:collection_id, :title, :description, :value, :height_mm, :width_mm, :depth_mm, :availability, images: [])
   end
 end

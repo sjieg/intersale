@@ -4,10 +4,29 @@
 
   <div class="form-inputs">
     <%= f.input :collection_id, as: :hidden %>
-    <%= f.input :images, input_html: { multiple: true, direct_upload: true } %>
-    <% @collection_item.images.each do |img| %>
-      <%= image_tag(img, class: 'mw-100') %>
-    <% end %>
+    <div
+      class="dropzone dropzone-default dz-clickable"
+      data-controller="dropzone"
+      data-dropzone-max-file-size="10"
+      data-dropzone-max-files="10"
+      data-dropzone-accepted-files="image/*">
+      <%=
+        f.input(:images,
+                input_html: {
+                  multiple: true,
+                  direct_upload: true,
+                  data: { target: 'dropzone.input' }
+                })
+      %>
+      <div class="dropzone-msg dz-message needsclick">
+        <h3 class="dropzone-msg-title">
+          <%= t('.images.drop_title') %>
+        </h3>
+        <span class="dropzone-msg-desc">
+          <%= t('.images.drop_description') %>
+        </span>
+      </div>
+    </div>
     <%= f.input :title %>
     <%= f.input :description %>
     <%#= f.input :value %>

@@ -1,44 +1,33 @@
-<div id="<%= dom_id collection_item %>">
-  <p>
-    <strong>Title:</strong>
-    <%= collection_item.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= collection_item.description %>
-  </p>
-
-  <p>
-    <strong>Value:</strong>
-    <%= collection_item.value %>
-  </p>
-
-  <p>
-    <strong>Height mm:</strong>
-    <%= collection_item.height_mm %>
-  </p>
-
-  <p>
-    <strong>Width mm:</strong>
-    <%= collection_item.width_mm %>
-  </p>
-
-  <p>
-    <strong>Depth mm:</strong>
-    <%= collection_item.depth_mm %>
-  </p>
-
-  <p>
-    <strong>Availability:</strong>
-    <%= collection_item.availability %>
-  </p>
-
-  <p>
-    <strong>Images:</strong>
-    <% collection_item.images.each do |image| %>
-      <div><%= link_to image.filename, image %></div>
+<div class="card collection-item-card" id="<%= dom_id(collection_item) %>">
+  <% if collection_item.images.length > 1 %>
+    <% carousel_id = dom_id(collection_item) + '_carousel' %>
+    <div id="<%= carousel_id %>" class="carousel slide">
+      <div class="carousel-inner">
+        <% collection_item.images.each do |image| %>
+          <a class="carousel-item <%= 'active' if image == collection_item.images.first %>" href="<%= url_for(image) %>" target="_blank">
+            <%= image_tag url_for(image), class: 'd-block w-100 card-img-top' %>
+          </a>
+        <% end %>
+      </div>
+      <buitton class="carousel-control-prev" data-bs-target="#<%= carousel_id %>" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </buitton>
+      <button class="carousel-control-next" data-bs-target="#<%= carousel_id %>" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  <% else %>
+    <a href="<%= url_for(collection_item.images.first) %>" target="_blank">
+      <%= image_tag url_for(collection_item.images.first), class: 'card-img-top', alt: collection_item.title %>
+    </a>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title text-truncate"><%= collection_item.title %></h5>
+    <p class="card-text text-truncate"><%= collection_item.description %></p>
+    <%= link_to collection_item, class: 'btn btn-primary' do %>
+      View
     <% end %>
-  </p>
-
+  </div>
 </div>
